@@ -732,6 +732,14 @@ ul { list-style: none; }
   align-items: center;
   gap: .35rem;
 }
+.timeline-company a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 45%, transparent);
+}
+.timeline-company a:hover {
+  border-bottom-color: currentColor;
+}
 .timeline-date {
   flex-shrink: 0;
   font-family: var(--font-mono);
@@ -840,33 +848,6 @@ ul { list-style: none; }
   gap: .3rem;
 }
 
-/* Courses */
-.subsection-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--clr-text);
-}
-.course-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-}
-.course-tags span {
-  display: inline-block;
-  padding: .35rem .8rem;
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: 100px;
-  font-size: .82rem;
-  color: var(--clr-text-muted);
-  transition: all var(--transition);
-}
-.course-tags span:hover {
-  border-color: var(--clr-accent);
-  color: var(--clr-accent);
-}
-
 /* ═══════════════════════════════════════════════
    PROJECTS GRID
 ═══════════════════════════════════════════════ */
@@ -949,17 +930,28 @@ ul { list-style: none; }
 }
 .project-card:hover .project-link { gap: .6rem; }
 
-.project-card-fun {
-  grid-column: span 1;
-  cursor: default;
+/* ═══════════════════════════════════════════════
+   THINGS I BUILD FOR FUN
+═══════════════════════════════════════════════ */
+.fun-builds-content {
+  max-width: 44rem;
 }
-.project-card-fun:hover { transform: none; }
-.fun-img {
+.fun-builds-content p {
+  font-size: .95rem;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.fun-builds-content p:last-child {
+  margin-bottom: 0;
+}
+.fun-builds-content .fun-img {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: var(--radius-md);
-  margin: .75rem 0;
-  object-fit: cover;
-  max-height: 220px;
+  margin: .25rem 0 1rem;
+  border: 1px solid var(--clr-border);
 }
 
 /* ═══════════════════════════════════════════════
