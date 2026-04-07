@@ -485,6 +485,19 @@ ul { list-style: none; }
   border-radius: 100px;
   white-space: nowrap;
 }
+.timeline-tag {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 600;
+  color: var(--clr-accent);
+  background: color-mix(in srgb, var(--clr-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--clr-accent) 35%, transparent);
+  padding: .1rem .45rem;
+  border-radius: 100px;
+  vertical-align: middle;
+  margin-left: .25rem;
+  letter-spacing: .03em;
+}
 .timeline-desc {
   font-size: .93rem;
   color: var(--clr-text-muted);
