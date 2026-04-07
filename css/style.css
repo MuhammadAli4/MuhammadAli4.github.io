@@ -1003,6 +1003,7 @@ ul { list-style: none; }
 .research-body a:hover { color: var(--clr-accent); }
 .research-body strong { color: var(--clr-text); }
 .research-body em { font-style: italic; }
+.research-body .edu-location { margin-top: 0.65rem; }
 
 /* ═══════════════════════════════════════════════
    FOOTER
