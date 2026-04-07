@@ -15,6 +15,9 @@
   <!-- ── HERO / HEADER ── -->
   <header class="hero">
     <div class="hero-bg-grid"></div>
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
     <nav class="navbar">
       <span class="nav-logo">Ali<span class="accent">.</span></span>
       <ul class="nav-links">
@@ -531,6 +534,44 @@
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
+
+    // ── Scroll-reveal with IntersectionObserver ──
+    (function () {
+      // Staggered groups: [container selector, children selector]
+      const staggerGroups = [
+        ['.timeline',      '.timeline-item'],
+        ['.edu-grid',      '.edu-card'],
+        ['.projects-grid', '.project-card'],
+        ['.research-list', '.research-item'],
+        ['.skills-grid',   '.skill-chip'],
+        ['.course-tags',   'span'],
+      ];
+
+      staggerGroups.forEach(([parent, child]) => {
+        document.querySelectorAll(parent).forEach(container => {
+          container.querySelectorAll(child).forEach((el, i) => {
+            el.classList.add('reveal');
+            el.style.transitionDelay = `${i * 0.07}s`;
+          });
+        });
+      });
+
+      // Individual reveals (no stagger)
+      document.querySelectorAll(
+        '.section-title, .about-text, .courses-wrap, .footer-title, .footer-sub'
+      ).forEach(el => el.classList.add('reveal'));
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    })();
   </script>
 
 </body>

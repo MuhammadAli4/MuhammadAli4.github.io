@@ -356,11 +356,13 @@ ul { list-style: none; }
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 48px;
+  width: 0;
   height: 4px;
   border-radius: 2px;
   background: linear-gradient(90deg, var(--clr-accent), var(--clr-accent-2));
+  transition: width 0.55s 0.2s cubic-bezier(.4,0,.2,1);
 }
+.section-title.visible::after { width: 48px; }
 
 /* ═══════════════════════════════════════════════
    ABOUT
@@ -851,4 +853,106 @@ ul { list-style: none; }
   .hero-text h1 { font-size: 2.4rem; }
   .hero-socials a { width: 38px; height: 38px; }
   .section { padding: 3.5rem 0; }
+}
+
+/* ═══════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════ */
+
+/* ── Scroll-reveal base ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(.4,0,.2,1),
+              transform 0.65s cubic-bezier(.4,0,.2,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Hero entrance – staggered fade-up / fade-right ── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-eyebrow   { animation: heroFadeUp   0.60s 0.15s both; }
+.hero-text h1   { animation: heroFadeUp   0.70s 0.30s both; }
+.hero-tagline   { animation: heroFadeUp   0.60s 0.48s both; }
+.hero-bio       { animation: heroFadeUp   0.60s 0.63s both; }
+.hero-actions   { animation: heroFadeUp   0.60s 0.78s both; }
+.hero-image-wrap { animation: heroFadeRight 0.80s 0.20s both; }
+
+/* ── Spinning gradient ring around photo ── */
+.hero-image-ring { animation: spinRing 16s linear infinite; }
+@keyframes spinRing { to { transform: rotate(360deg); } }
+
+/* ── Photo glow pulse ── */
+@keyframes photoGlow {
+  0%, 100% { box-shadow: 0 0 60px rgba(79,70,229,.30); }
+  50%       { box-shadow: 0 0 90px rgba(79,70,229,.55), 0 0 140px rgba(167,139,250,.18); }
+}
+.hero-photo { animation: photoGlow 4s ease-in-out infinite; }
+
+/* ── Floating blobs ── */
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-blob-1 {
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(79,70,229,.22) 0%, transparent 65%);
+  top: -160px; left: -160px;
+  animation: floatBlob  9s ease-in-out infinite;
+}
+.hero-blob-2 {
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(167,139,250,.18) 0%, transparent 65%);
+  bottom: -40px; right: 8%;
+  animation: floatBlob 12s ease-in-out infinite 1.8s;
+}
+.hero-blob-3 {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(99,102,241,.13) 0%, transparent 65%);
+  top: 45%; left: 42%;
+  animation: floatBlob 15s ease-in-out infinite 3.5s reverse;
+}
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0,    0)    scale(1.00); }
+  40%       { transform: translate(26px, -38px) scale(1.07); }
+  70%       { transform: translate(-20px, 14px) scale(0.96); }
+}
+
+/* ── Timeline marker glow ── */
+.timeline-marker { animation: markerGlow 3s ease-in-out infinite; }
+@keyframes markerGlow {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(79,70,229,.25); }
+  50%       { box-shadow: 0 0 0 6px rgba(79,70,229,.10), 0 0 14px rgba(79,70,229,.35); }
+}
+
+/* ── Navbar logo subtle shimmer ── */
+@keyframes logoPulse {
+  0%, 100% { text-shadow: none; }
+  50%       { text-shadow: 0 0 20px rgba(79,70,229,.5); }
+}
+.nav-logo { animation: logoPulse 5s ease-in-out infinite; }
+
+/* ── Skill chip pop-in ── */
+@keyframes chipPop {
+  from { opacity: 0; transform: scale(0.82) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.skill-chip.reveal {
+  transform: scale(0.82) translateY(8px);
+}
+.skill-chip.visible {
+  animation: chipPop 0.4s cubic-bezier(.34,1.56,.64,1) both;
 }
