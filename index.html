@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="color-scheme" content="light" />
   <title>Ali Haider — Data Scientist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +22,7 @@
     <div class="hero-blob hero-blob-3"></div>
     <nav class="navbar">
       <span class="nav-logo">Ali<span class="accent">.</span></span>
-      <ul class="nav-links">
+      <ul class="nav-links" id="site-nav">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
@@ -29,7 +31,13 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact" class="btn-nav">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -125,103 +133,103 @@
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-card-header">
-                <div>
+              <details class="timeline-details">
+                <summary class="timeline-summary">
                   <h3 class="timeline-role">Founding AI/ML Engineer</h3>
-                  <p class="timeline-company"><i class="fa-solid fa-rocket"></i> <a href="https://www.applysprint.com" target="_blank" rel="noopener noreferrer">Apply Sprint</a> <span class="timeline-tag">Acquired</span> &mdash; Remote</p>
-                </div>
-                <span class="timeline-date">Sep 2025 &ndash; Mar 2026</span>
-              </div>
-              <ul class="timeline-bullets">
-                <li>Went from zero to production building a multi-agent AI system (LangGraph + LangChain) that matches candidates to jobs and rewrites their resumes — all orchestrated by GPT-4, Claude, and DeepSeek working in concert. Under the hood: a two-stage NLP pipeline with a fine-tuned XLM-RoBERTa classifier (PyTorch) feeding a stacked ensemble, the whole thing living in Dockerized containers on AWS. Wanna see? <a href="https://www.applysprint.com" target="_blank" rel="noopener noreferrer">Check it out here</a>.</li>
-                <li>Wore a lot of hats as Founding Engineer — designed the architecture, shaped the ML pipeline, shipped to prod, and kept a small team of engineers pointed in the right direction, all the way through acquisition.</li>
-              </ul>
+                  <span class="timeline-company"><i class="fa-solid fa-rocket"></i> <a href="https://www.applysprint.com" target="_blank" rel="noopener noreferrer">Apply Sprint</a> <span class="timeline-tag">Acquired</span> &mdash; Remote</span>
+                  <span class="timeline-date">Sep 2025 &ndash; Mar 2026</span>
+                </summary>
+                <ul class="timeline-bullets">
+                  <li>Went from zero to production building a multi-agent AI system (LangGraph + LangChain) that matches candidates to jobs and rewrites their resumes — all orchestrated by GPT-4, Claude, and DeepSeek working in concert. Under the hood: a two-stage NLP pipeline with a fine-tuned XLM-RoBERTa classifier (PyTorch) feeding a stacked ensemble, the whole thing living in Dockerized containers on AWS. Wanna see? <a href="https://www.applysprint.com" target="_blank" rel="noopener noreferrer">Check it out here</a>.</li>
+                  <li>Wore a lot of hats as Founding Engineer — designed the architecture, shaped the ML pipeline, shipped to prod, and kept a small team of engineers pointed in the right direction, all the way through acquisition.</li>
+                </ul>
+              </details>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-card-header">
-                <div>
+              <details class="timeline-details">
+                <summary class="timeline-summary">
                   <h3 class="timeline-role">Senior Data Scientist</h3>
-                  <p class="timeline-company"><i class="fa-solid fa-building"></i> Bank of America &mdash; Charlotte, NC</p>
-                </div>
-                <span class="timeline-date">Feb 2024 &ndash; Aug 2025</span>
-              </div>
-              <ul class="timeline-bullets">
-                <li>Kept a watchful eye on fraud models guarding $20B+ in annual transactions across Mastercard and OMNI credit card portfolios — tracking CSI, PSI, AUC-ROC, and rank ordering to make sure nothing drifted off the rails (regulators included).</li>
-                <li>Dug deep into dozens of KPIs to find the "why" behind model misbehavior, and built surrogate fraud detection models using black-box distillation to reverse-engineer what third-party models were actually up to.</li>
-                <li>Translated gnarly model performance findings into clean executive reports that senior leadership could actually act on — no jargon overload, just clear insights and a path forward.</li>
-              </ul>
+                  <span class="timeline-company"><i class="fa-solid fa-building"></i> Bank of America &mdash; Charlotte, NC</span>
+                  <span class="timeline-date">Feb 2024 &ndash; Aug 2025</span>
+                </summary>
+                <ul class="timeline-bullets">
+                  <li>Kept a watchful eye on fraud models guarding $20B+ in annual transactions across Mastercard and OMNI credit card portfolios — tracking CSI, PSI, AUC-ROC, and rank ordering to make sure nothing drifted off the rails (regulators included).</li>
+                  <li>Dug deep into dozens of KPIs to find the "why" behind model misbehavior, and built surrogate fraud detection models using black-box distillation to reverse-engineer what third-party models were actually up to.</li>
+                  <li>Translated gnarly model performance findings into clean executive reports that senior leadership could actually act on — no jargon overload, just clear insights and a path forward.</li>
+                </ul>
+              </details>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-card-header">
-                <div>
+              <details class="timeline-details">
+                <summary class="timeline-summary">
                   <h3 class="timeline-role">Data Scientist</h3>
-                  <p class="timeline-company"><i class="fa-solid fa-building"></i> Lowe's &mdash; Charlotte, NC</p>
-                </div>
-                <span class="timeline-date">Feb 2022 &ndash; Jan 2024</span>
-              </div>
-              <ul class="timeline-bullets">
-                <li><strong>Media Mix Modeling:</strong> Built a statistical framework to figure out which marketing dollars were actually doing anything. Used XGBoost as a baseline, wrestled with multicollinearity, and layered in Bayesian and ensemble methods for clean attribution. The payoff? A <strong>3% ROI uplift</strong> on a $900M marketing budget — real money.</li>
-                <li><strong>Predicting Sales During Storms:</strong> When hurricanes hit, Lowe's needs to know exactly what to stock and where. Built regression models to forecast sales across 3,000 stores and 30,000 product assortments during severe weather — using K-Means clustering to find patterns, and a full Docker + Kubernetes + MLflow pipeline to ship it all cleanly to prod.</li>
-              </ul>
+                  <span class="timeline-company"><i class="fa-solid fa-building"></i> Lowe's &mdash; Charlotte, NC</span>
+                  <span class="timeline-date">Feb 2022 &ndash; Jan 2024</span>
+                </summary>
+                <ul class="timeline-bullets">
+                  <li><strong>Media Mix Modeling:</strong> Built a statistical framework to figure out which marketing dollars were actually doing anything. Used XGBoost as a baseline, wrestled with multicollinearity, and layered in Bayesian and ensemble methods for clean attribution. The payoff? A <strong>3% ROI uplift</strong> on a $900M marketing budget — real money.</li>
+                  <li><strong>Predicting Sales During Storms:</strong> When hurricanes hit, Lowe's needs to know exactly what to stock and where. Built regression models to forecast sales across 3,000 stores and 30,000 product assortments during severe weather — using K-Means clustering to find patterns, and a full Docker + Kubernetes + MLflow pipeline to ship it all cleanly to prod.</li>
+                </ul>
+              </details>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-card-header">
-                <div>
+              <details class="timeline-details">
+                <summary class="timeline-summary">
                   <h3 class="timeline-role">Data Scientist</h3>
-                  <p class="timeline-company"><i class="fa-solid fa-network-wired"></i> HTN Networks Inc. (Cisco) &mdash; Irvine, CA</p>
-                </div>
-                <span class="timeline-date">Apr 2020 &ndash; Jan 2022</span>
-              </div>
-              <ul class="timeline-bullets">
-                <li>Built an ML system to hunt down malicious network traffic — combining reinforcement learning with an ensemble model that kept getting smarter through continuous experimentation. Set up data drift monitoring so it wouldn't go stale after deployment.</li>
-                <li>The numbers speak for themselves: <strong>97% F1 score</strong>, <strong>42% fewer false alarms</strong>, and <strong>35% faster threat response</strong>. The network security team was happy. The attackers, less so.</li>
-              </ul>
+                  <span class="timeline-company"><i class="fa-solid fa-network-wired"></i> HTN Networks Inc. (Cisco) &mdash; Irvine, CA</span>
+                  <span class="timeline-date">Apr 2020 &ndash; Jan 2022</span>
+                </summary>
+                <ul class="timeline-bullets">
+                  <li>Built an ML system to hunt down malicious network traffic — combining reinforcement learning with an ensemble model that kept getting smarter through continuous experimentation. Set up data drift monitoring so it wouldn't go stale after deployment.</li>
+                  <li>The numbers speak for themselves: <strong>97% F1 score</strong>, <strong>42% fewer false alarms</strong>, and <strong>35% faster threat response</strong>. The network security team was happy. The attackers, less so.</li>
+                </ul>
+              </details>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-card-header">
-                <div>
+              <details class="timeline-details">
+                <summary class="timeline-summary">
                   <h3 class="timeline-role">Graduate Research Assistant</h3>
-                  <p class="timeline-company"><i class="fa-solid fa-flask"></i> NC State University &mdash; Raleigh, NC</p>
-                </div>
-                <span class="timeline-date">Aug 2017 &ndash; Jan 2018</span>
-              </div>
-              <ul class="timeline-bullets">
-                <li>Joined a sustainability research lab and put ANOVA and ARIMA to work — forecasting environmental trends and squeezing more reliability out of the predictions used in impact assessments.</li>
-                <li>Turned messy environmental datasets into actionable insights using good old-fashioned statistics. Unglamorous, important work.</li>
-              </ul>
+                  <span class="timeline-company"><i class="fa-solid fa-flask"></i> NC State University &mdash; Raleigh, NC</span>
+                  <span class="timeline-date">Aug 2017 &ndash; Jan 2018</span>
+                </summary>
+                <ul class="timeline-bullets">
+                  <li>Joined a sustainability research lab and put ANOVA and ARIMA to work — forecasting environmental trends and squeezing more reliability out of the predictions used in impact assessments.</li>
+                  <li>Turned messy environmental datasets into actionable insights using good old-fashioned statistics. Unglamorous, important work.</li>
+                </ul>
+              </details>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-marker"></div>
             <div class="timeline-card">
-              <div class="timeline-card-header">
-                <div>
+              <details class="timeline-details">
+                <summary class="timeline-summary">
                   <h3 class="timeline-role">Teaching Assistant</h3>
-                  <p class="timeline-company"><i class="fa-solid fa-chalkboard-user"></i> Istanbul Sehir University &mdash; Istanbul, Turkey</p>
-                </div>
-                <span class="timeline-date">Sep 2015 &ndash; May 2017</span>
-              </div>
-              <ul class="timeline-bullets">
-                <li>Helped undergrads survive their coursework — grading, tutoring, and running discussion sessions without making anyone cry (most of the time).</li>
-                <li>Ran Python and SQL labs that actually made students better coders. Turns out explaining the same bug twelve different ways is a great way to really understand it yourself.</li>
-              </ul>
+                  <span class="timeline-company"><i class="fa-solid fa-chalkboard-user"></i> Istanbul Sehir University &mdash; Istanbul, Turkey</span>
+                  <span class="timeline-date">Sep 2015 &ndash; May 2017</span>
+                </summary>
+                <ul class="timeline-bullets">
+                  <li>Helped undergrads survive their coursework — grading, tutoring, and running discussion sessions without making anyone cry (most of the time).</li>
+                  <li>Ran Python and SQL labs that actually made students better coders. Turns out explaining the same bug twelve different ways is a great way to really understand it yourself.</li>
+                </ul>
+              </details>
             </div>
           </div>
 
@@ -305,7 +313,7 @@
             <strong>Music Generation</strong> — Currently learning to generate music via GAN. Coming soon!
           </p>
           <p>
-            <strong>Outdoors</strong> — Soccer, hiking &amp; <a href="https://www.instagram.com/mali4haider/" target="_blank">exploring beautiful places</a>.
+            <strong>Outdoors</strong> — Soccer, hiking &amp; exploring beautiful places.
           </p>
         </div>
       </div>
@@ -505,7 +513,6 @@
         <div class="footer-links">
           <a href="https://github.com/MuhammadAli4" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
           <a href="https://www.linkedin.com/in/muhammad-ali-haider-4b013132/" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-          <a href="https://www.instagram.com/mali4haider/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
           <a href="https://github.com/MuhammadAli4/MuhammadAli4.github.io/blob/main/Ali's%20Resume.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Résumé</a>
         </div>
       </div>
@@ -514,19 +521,29 @@
   </footer>
 
   <script>
-    // Mobile nav toggle
+    // Mobile nav: drawer, scroll lock, a11y
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const navMedia = window.matchMedia('(max-width: 920px)');
+
+    function setNavOpen(open) {
+      navLinks.classList.toggle('open', open);
+      toggle.classList.toggle('active', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-open', open);
+    }
+
     toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      toggle.classList.toggle('active');
+      setNavOpen(!navLinks.classList.contains('open'));
     });
-    // Close nav on link click
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        toggle.classList.remove('active');
-      });
+    navLinks.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => setNavOpen(false));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) setNavOpen(false);
+    });
+    navMedia.addEventListener('change', (e) => {
+      if (!e.matches) setNavOpen(false);
     });
     // Sticky nav shrink
     const navbar = document.querySelector('.navbar');
